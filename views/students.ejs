@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+    <%- include('./layouts/header') %>
+    <main class="container">
+        <h2>students</h2>
+        <div class="the-form">
+            <%- include('./partials/_form.partials.ejs')  %>
+        </div>
+
+        <div class="the-contents mt-4 pt-3">
+            <% allStudents.forEach(students => { %>
+            <div class="content">
+                <h4 id="content-title">
+                    <%- students.firstName%>
+                </h4>
+
+                <div class="content-body">
+                    <p><%- students.lastName %></p>
+                    <div class="buttons my-4">
+                        <a href="students/edit/<%= students.id %>" class="btn btn-success" id="update">Edit</a>
+                        <!-- <button class="btn btn-warning" id="delete">Update</button> -->
+                        <a href="/students/delete/<%= students.id %>" class="btn btn-danger" id="delete">Delete</a>
+                    </div>
+
+                    <hr>
+                </div>
+            </div>
+            <% }) %>
+
+        </div>
+
+    </main>
+</body>
+
+</html>

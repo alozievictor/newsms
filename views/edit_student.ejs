@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+    <%- include('./layouts/header') %>
+    <form method="post" action="/students/edit/<%= Student.id%>">
+        <div class="form-group">
+          <label>Student First Name:</label>
+          <input name="firstName" type="text" class="form-control" aria-describedby="inputHelp" value="<%= Student.firstName%>">
+          <small id="inputHelp" class="form-text text-muted">Please enter a title here.</small>
+        </div>
+  
+        <div class="form-group">
+          <label>Student Last Name: </label>
+          <input name="lastName" type="text" class="form-control" value="<%= Student.lastName%>">
+        </div>
+        <div class="form-group">
+          <label>Student Id: </label>
+          <input name="studentId" type="text" class="form-control" value="<%= Student.studentId%>">
+        </div>
+        <div class="form-group">
+          <label>Student nin: </label>
+          <input name="nin" type="text" class="form-control" value="<%= Student.nin%>">
+        </div>
+        <div class="form-group">
+          <label>Student International Passport Id: </label>
+          <input name="intId" type="text" class="form-control" value="<%= Student.intId%>">
+        </div>
+        <div class="form-group">
+          <label>Student email: </label>
+          <input name="email" type="text" class="form-control" value="<%= Student.email%>">
+        </div>
+        <div class="form-group">
+          <label>Student department: </label>
+          <input name="department" type="text" class="form-control" value="<%= Student.department%>">
+        </div>
+        <div class="form-group">
+          <label>Student programme: </label>
+          <input name="programme" type="text" class="form-control" value="<%= Student.programme%>">
+        </div>
+        <div class="form-group">
+          <label>Student intake: </label>
+          <input name="intake" type="text" class="form-control" value="<%= Student.intake%>">
+        </div>
+        <div class="form-group">
+          <label>Student Status: </label>
+          <input name="status" type="text" class="form-control" value="<%= Student.status %>">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
+
+</html>
